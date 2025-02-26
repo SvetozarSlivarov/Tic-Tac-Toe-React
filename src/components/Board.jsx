@@ -39,6 +39,10 @@ export default function Board() {
         setSquares(nextSquares);
         setIsXNext(!isXNext);
     }
+    function handleRestart() {
+        setSquares(Array(9).fill(null));
+        setIsXNext(true);
+      }
 
     return (
         <>
@@ -58,6 +62,9 @@ export default function Board() {
                 <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                 <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
             </div>
+            <button className="restart-button" onClick={handleRestart}>
+                Restart Game
+            </button>
         </>
     );
 }
