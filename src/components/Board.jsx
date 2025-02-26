@@ -27,12 +27,15 @@ export default function Board() {
     }
 
     const winner = calculateWinner(squares);
+    const isBoardFull = squares.every((square) => square !== null);
     const status = winner
         ? `Winner: ${winner}`
+        : isBoardFull
+        ? "It's a draw!"
         : `Next player: ${isXNext ? 'X' : 'O'}`;
 
     function handleClick(i) {
-        if (squares[i] || winner) return;
+        if (squares[i] || winner || isBoardFull) return;
 
         const nextSquares = squares.slice();
         nextSquares[i] = isXNext ? 'X' : 'O';
