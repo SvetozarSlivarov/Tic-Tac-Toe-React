@@ -1,89 +1,149 @@
-.square {
-  width: 100px;
-  height: 100px;
-  min-width: 100px;
-  min-height: 100px;
-  font-size: 24px;
-  font-weight: bold;
-  background-color: #fff;
-  border: 2px solid #999;
-  cursor: pointer;
+/* Основен стил за приложението */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.square:hover {
-  background-color: #f0f0f0;
-}
-
-.board-row {
-  display: flex;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
 }
 
 .app {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header {
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
 }
 
 h1 {
-  margin-bottom: 20px;
-  color: #333;
+  align-items: center;
+  width: 300px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .status {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-.restart-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
   color: #fff;
-  background-color: #333;
-  border: none;
-  border-radius: 5px;
+}
+
+/* Стилове за дъската */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.board-row {
+  display: contents;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.square:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+/* Стилове за бутона за рестартиране */
+.restart-button {
+  margin-top: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #ff6f61, #ffcc00);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
+  margin-bottom: 1.5rem;
 }
 
 .restart-button:hover {
-  background-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 20px;
+.restart-button:active {
+  transform: translateY(0);
+  
 }
 
-.game-board {
-  margin-right: 20px;
-}
-
+/* Стилове за историята на ходовете */
 .game-info {
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
 }
 
 ol {
-  padding-left: 20px;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 button {
-  padding: 5px 10px;
-  font-size: 14px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff6f61;
+  background: transparent;
+  border: 2px solid #ff6f61;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #ff6f61;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
 }

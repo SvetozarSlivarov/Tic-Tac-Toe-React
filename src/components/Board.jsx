@@ -47,28 +47,33 @@ export default function Board() {
 
     return (
         <>
-            <div className="status">{status}</div>
-            <div className="board-row">
-                <Square value={currentSquares[0]} onSquareClick={() => handleClick(0)} />
-                <Square value={currentSquares[1]} onSquareClick={() => handleClick(1)} />
-                <Square value={currentSquares[2]} onSquareClick={() => handleClick(2)} />
-            </div>
-            <div className="board-row">
-                <Square value={currentSquares[3]} onSquareClick={() => handleClick(3)} />
-                <Square value={currentSquares[4]} onSquareClick={() => handleClick(4)} />
-                <Square value={currentSquares[5]} onSquareClick={() => handleClick(5)} />
-            </div>
-            <div className="board-row">
-                <Square value={currentSquares[6]} onSquareClick={() => handleClick(6)} />
-                <Square value={currentSquares[7]} onSquareClick={() => handleClick(7)} />
-                <Square value={currentSquares[8]} onSquareClick={() => handleClick(8)} />
-            </div>
-            <button className="restart-button" onClick={handleRestart}>
-                Restart Game
-            </button>
+            <div className='game'>
+                <div className="status">{status}</div>
+                <div className='board'>
+                    <div className="board-row">
+                        <Square value={currentSquares[0]} onSquareClick={() => handleClick(0)} />
+                        <Square value={currentSquares[1]} onSquareClick={() => handleClick(1)} />
+                        <Square value={currentSquares[2]} onSquareClick={() => handleClick(2)} />
+                    </div>
+                    <div className="board-row">
+                        <Square value={currentSquares[3]} onSquareClick={() => handleClick(3)} />
+                        <Square value={currentSquares[4]} onSquareClick={() => handleClick(4)} />
+                        <Square value={currentSquares[5]} onSquareClick={() => handleClick(5)} />
+                    </div>
+                    <div className="board-row">
+                        <Square value={currentSquares[6]} onSquareClick={() => handleClick(6)} />
+                        <Square value={currentSquares[7]} onSquareClick={() => handleClick(7)} />
+                        <Square value={currentSquares[8]} onSquareClick={() => handleClick(8)} />
+                    </div>
+                </div>
+                <button className="restart-button" onClick={handleRestart}>
+                    Restart Game
+                </button>
+            </div>    
             <div className="game-info">
                 <ol>{moves}</ol>
             </div>
+            
         </>
     );
 }
